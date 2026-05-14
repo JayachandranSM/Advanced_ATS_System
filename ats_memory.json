@@ -1,0 +1,359 @@
+{
+  "candidates": [
+    {
+      "id": "Jayachandran Swarnamoorthy_1777465792",
+      "timestamp": "2026-04-29T17:59:52.526188",
+      "name": "Jayachandran Swarnamoorthy",
+      "role": "Forward Deployed AI Engineer",
+      "jd_id": "forward_deployed_ai_engineer",
+      "final_score": 69.4,
+      "ai_decision": "Hold",
+      "final_decision": "Hire",
+      "override": true,
+      "override_note": "",
+      "exp_flag": "Good Fit",
+      "jd_quality": "High",
+      "experience_years": 14,
+      "matched_skills": [
+        "prompt engineering",
+        "JavaScript",
+        "Python",
+        "communication"
+      ],
+      "missing_skills": [
+        "software engineering",
+        "customer-facing work",
+        "low-code orchestration tools",
+        "n8n",
+        "Zapier",
+        "Make",
+        "attention to detail",
+        "problem-solving",
+        "context-switching"
+      ],
+      "confidence": 65,
+      "score_audit": {
+        "skill_score": 47.8,
+        "skill_weight": 25.0,
+        "exp_score": 100.0,
+        "exp_weight": 25.0,
+        "role_score": 57.6,
+        "role_weight": 35.0,
+        "ai_score": 80.0,
+        "ai_weight": 15.0,
+        "final_score": 69.4,
+        "raw_final": 69.1,
+        "impact_boost": 5,
+        "coverage_alignment_applied": true,
+        "depth_multiplier": 1.5,
+        "raw_skill_score": 31.9,
+        "ai_key_strengths": [
+          "14 years of experience in AI/ML",
+          "Strong domain expertise in BFSI and Retail"
+        ],
+        "ai_key_risks": [
+          "Missing experience in customer-facing work",
+          "Lack of experience with low-code orchestration tools"
+        ],
+        "ai_verdict_reason": "Because the candidate has strong domain expertise and relevant experience in AI/ML, which aligns well with the role, despite some minor gaps in customer-facing work and low-code tools.",
+        "skill_breakdown": {
+          "prompt engineering": {
+            "weight": 0.6,
+            "credit": 1.0,
+            "confidence": 1.0,
+            "effective": 0.6,
+            "matched_by": "Prompt Engineering",
+            "reason": "exact"
+          },
+          "JavaScript": {
+            "weight": 0.8,
+            "credit": 0.9,
+            "confidence": 1.0,
+            "effective": 0.72,
+            "matched_by": "Django",
+            "reason": "group"
+          },
+          "Python": {
+            "weight": 1.0,
+            "credit": 1.0,
+            "confidence": 1.0,
+            "effective": 1.0,
+            "matched_by": "Python",
+            "reason": "exact"
+          },
+          "communication": {
+            "weight": 0.6,
+            "credit": 0.85,
+            "confidence": 0.7,
+            "effective": 0.357,
+            "matched_by": "Communication Skills",
+            "reason": "substring"
+          }
+        },
+        "jd_intent": "product",
+        "adaptive_weights_label": "Product/AI Role \u2014 role alignment weighted higher",
+        "title_boost": 3.0,
+        "formula": "(25% \u00d7 47.8) + (25% \u00d7 100.0) + (35% \u00d7 57.6) + (15% \u00d7 80.0) = 69.1% \u2192 align\u00d70.93 + impact+5 = 69.4%"
+      },
+      "impact_score": 15
+    },
+    {
+      "id": "Jayachandran Swarnamoorthy_1777517224",
+      "timestamp": "2026-04-30T08:17:04.143700",
+      "name": "Jayachandran Swarnamoorthy",
+      "role": "Copilot & Agentic AI Engineer",
+      "jd_id": "copilot___agentic_ai_engineer",
+      "final_score": 65.2,
+      "ai_decision": "Hold",
+      "final_decision": "Hire",
+      "override": true,
+      "override_note": "We can consider him for the profile",
+      "exp_flag": "Overqualified",
+      "jd_quality": "High",
+      "experience_years": 14,
+      "matched_skills": [
+        "Azure",
+        "APIs",
+        "Python",
+        "JavaScript",
+        "Azure certifications"
+      ],
+      "missing_skills": [
+        "Microsoft ecosystem",
+        "Power Platform",
+        "Copilot Studio",
+        "REST integrations",
+        "automation workflows",
+        "C#",
+        "enterprise integrations",
+        "identity and security",
+        "Microsoft Fabric",
+        "Dataverse",
+        "Graph API",
+        "vector databases",
+        "semantic search",
+        "Power Platform certifications"
+      ],
+      "confidence": 65,
+      "score_audit": {
+        "skill_score": 41.3,
+        "skill_weight": 35.0,
+        "exp_score": 100.0,
+        "exp_weight": 20.0,
+        "role_score": 61.6,
+        "role_weight": 30.0,
+        "ai_score": 80.0,
+        "ai_weight": 15.0,
+        "final_score": 65.2,
+        "raw_final": 64.9,
+        "impact_boost": 5,
+        "coverage_alignment_applied": true,
+        "depth_multiplier": 1.5,
+        "raw_skill_score": 27.5,
+        "ai_key_strengths": [
+          "14 years of experience in AI/ML pipelines",
+          "Strong background in software engineering and deployment"
+        ],
+        "ai_key_risks": [
+          "Missing specific experience with Microsoft ecosystem and Power Platform"
+        ],
+        "ai_verdict_reason": "Because the candidate has strong domain expertise and most critical skills covered, but lacks some specific experience with the Microsoft ecosystem, which is important for the role.",
+        "skill_breakdown": {
+          "Azure": {
+            "weight": 0.6,
+            "credit": 1.0,
+            "confidence": 1.0,
+            "effective": 0.6,
+            "matched_by": "Azure",
+            "reason": "exact"
+          },
+          "APIs": {
+            "weight": 0.6,
+            "credit": 1.0,
+            "confidence": 1.0,
+            "effective": 0.6,
+            "matched_by": "APIs",
+            "reason": "implicit (Explicit/Strong)"
+          },
+          "Python": {
+            "weight": 1.0,
+            "credit": 1.0,
+            "confidence": 1.0,
+            "effective": 1.0,
+            "matched_by": "Python",
+            "reason": "exact"
+          },
+          "JavaScript": {
+            "weight": 0.6,
+            "credit": 0.9,
+            "confidence": 1.0,
+            "effective": 0.54,
+            "matched_by": "Django",
+            "reason": "group"
+          },
+          "Azure certifications": {
+            "weight": 0.6,
+            "credit": 0.85,
+            "confidence": 1.0,
+            "effective": 0.51,
+            "matched_by": "Azure",
+            "reason": "substring"
+          }
+        },
+        "jd_intent": "genai",
+        "adaptive_weights_label": "GenAI Role \u2014 AI judgment weighted higher",
+        "title_boost": 11.0,
+        "implicit_skills_used": [
+          "Software Engineering",
+          "Backend Systems",
+          "Deployment",
+          "Microservices",
+          "Cloud Architecture",
+          "REST APIs",
+          "Flask",
+          "Django"
+        ],
+        "formula": "(35% \u00d7 41.3) + (20% \u00d7 100.0) + (30% \u00d7 61.6) + (15% \u00d7 80.0) = 64.9% \u2192 align\u00d70.93 + impact+5 = 65.2%"
+      },
+      "impact_score": 15
+    },
+    {
+      "id": "Jayachandran Swarnamoorthy_1778771951",
+      "timestamp": "2026-05-14T20:49:11.645562",
+      "name": "Jayachandran Swarnamoorthy",
+      "role": "Data Science Manager",
+      "jd_id": "data_science_manager",
+      "final_score": 77.5,
+      "ai_decision": "Hire",
+      "final_decision": "Hire",
+      "override": true,
+      "override_note": "",
+      "exp_flag": "Overqualified",
+      "jd_quality": "High",
+      "experience_years": 14,
+      "matched_skills": [
+        "Agentic AI",
+        "MLOps",
+        "Azure DevOps"
+      ],
+      "missing_skills": [
+        "Data Science",
+        "Managerial Experience",
+        "AI/ML Ethics",
+        "Modern Data Stack",
+        "Jira"
+      ],
+      "confidence": 75,
+      "score_audit": {
+        "skill_score": 66.3,
+        "skill_weight": 40.0,
+        "exp_score": 100.0,
+        "exp_weight": 25.0,
+        "role_score": 77.6,
+        "role_weight": 25.0,
+        "ai_score": 80.0,
+        "ai_weight": 10.0,
+        "final_score": 77.5,
+        "raw_final": 78.9,
+        "impact_boost": 3.0,
+        "coverage_alignment_applied": true,
+        "depth_multiplier": 1.5,
+        "raw_skill_score": 44.2,
+        "ai_key_strengths": [
+          "14 years of experience in Data Science and AI Engineering",
+          "Strong domain expertise in BFSI, Agroeconomics, and Retail"
+        ],
+        "ai_key_risks": [
+          "Missing managerial experience and AI/ML ethics knowledge"
+        ],
+        "ai_verdict_reason": "Because the candidate has strong domain expertise and relevant skills covered, but lacks some managerial experience and knowledge in AI/ML ethics, which are important for the role.",
+        "skill_breakdown": {
+          "Agentic AI": {
+            "weight": 1.0,
+            "credit": 1.0,
+            "confidence": 1.0,
+            "effective": 1.0,
+            "matched_by": "Agentic AI",
+            "reason": "exact"
+          },
+          "MLOps": {
+            "weight": 0.7,
+            "credit": 1.0,
+            "confidence": 1.0,
+            "effective": 0.7,
+            "matched_by": "MLOps",
+            "reason": "exact"
+          },
+          "Azure DevOps": {
+            "weight": 0.6,
+            "credit": 0.85,
+            "confidence": 1.0,
+            "effective": 0.51,
+            "matched_by": "Azure",
+            "reason": "substring"
+          }
+        },
+        "jd_intent": "engineering",
+        "adaptive_weights_label": "Engineering Role \u2014 skill stack weighted higher",
+        "title_boost": 6.0,
+        "implicit_skills_used": [
+          "Software Engineering",
+          "Backend Systems",
+          "Deployment",
+          "Microservices",
+          "Cloud Architecture",
+          "REST APIs",
+          "Flask",
+          "Django"
+        ],
+        "platform_learnability": true,
+        "formula": "(40% \u00d7 66.3) + (25% \u00d7 100.0) + (25% \u00d7 77.6) + (10% \u00d7 80.0) = 78.9% \u2192 align\u00d70.94 + impact+3.0 = 77.5% | Platform tools down-weighted (learnable gap)"
+      },
+      "impact_score": 9
+    }
+  ],
+  "patterns": {
+    "missing": {
+      "software engineering": 1,
+      "customer-facing work": 1,
+      "low-code orchestration tools": 1,
+      "n8n": 1,
+      "Zapier": 1,
+      "Make": 1,
+      "attention to detail": 1,
+      "problem-solving": 1,
+      "context-switching": 1,
+      "Microsoft ecosystem": 1,
+      "Power Platform": 1,
+      "Copilot Studio": 1,
+      "REST integrations": 1,
+      "automation workflows": 1,
+      "C#": 1,
+      "enterprise integrations": 1,
+      "identity and security": 1,
+      "Microsoft Fabric": 1,
+      "Dataverse": 1,
+      "Graph API": 1,
+      "vector databases": 1,
+      "semantic search": 1,
+      "Power Platform certifications": 1,
+      "Data Science": 1,
+      "Managerial Experience": 1,
+      "AI/ML Ethics": 1,
+      "Modern Data Stack": 1,
+      "Jira": 1
+    },
+    "matched": {
+      "prompt engineering": 1,
+      "JavaScript": 2,
+      "Python": 2,
+      "communication": 1,
+      "Azure": 1,
+      "APIs": 1,
+      "Azure certifications": 1,
+      "Agentic AI": 1,
+      "MLOps": 1,
+      "Azure DevOps": 1
+    }
+  }
+}

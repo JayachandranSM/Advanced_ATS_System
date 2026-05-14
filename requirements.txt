@@ -1,0 +1,14 @@
+streamlit
+python-dotenv
+pdfplumber
+pymupdf
+pytesseract
+Pillow
+pdf2image
+easyocr
+langchain
+langchain-openai
+langchain-community
+openai
+faiss-cpu
+numpy
