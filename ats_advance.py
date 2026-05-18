@@ -1664,10 +1664,53 @@ def decision_logic_layer(match, screening, exp_check, jd_quality, role_fit) -> D
 
 
 # ══════════════════════════════════════════════════════════════════════════════
+# PUBLIC USAGE GATE — protects API key on Streamlit Cloud
+# ══════════════════════════════════════════════════════════════════════════════
+
+MAX_DAILY_RUNS = 50  # ~$3–5/month with gpt-4o-mini at this volume
+
+def usage_gate():
+    """
+    Simple daily run counter stored in a local JSON file.
+    On Streamlit Cloud, this resets when the app restarts (dyno cycle).
+    Sufficient protection for a small public demo with a shared API key.
+    """
+    today      = datetime.now().strftime("%Y-%m-%d")
+    count_file = Path("usage_count.json")
+    try:
+        data = json.loads(count_file.read_text()) if count_file.exists() else {}
+    except Exception:
+        data = {}
+    # Prune old dates to keep file small
+    data = {k: v for k, v in data.items() if k == today}
+    count = data.get(today, 0)
+    if count >= MAX_DAILY_RUNS:
+        st.error(
+            f"⚠️ **Daily limit reached** ({MAX_DAILY_RUNS} pipeline runs/day). "
+            "This keeps the demo free for everyone. Try again tomorrow, or:"
+        )
+        st.info(
+            "🔧 **Run it yourself** — clone the repo, add your own `OPENAI_API_KEY` "
+            "in `.env`, and run `streamlit run ats_v15.py` locally. "
+            "Full instructions in the README."
+        )
+        st.stop()
+    data[today] = count + 1
+    try:
+        count_file.write_text(json.dumps(data))
+    except Exception:
+        pass  # read-only FS on some cloud envs — fail silently
+    remaining = MAX_DAILY_RUNS - (count + 1)
+    st.caption(f"🔢 Public runs today: {count+1}/{MAX_DAILY_RUNS} "
+               f"({remaining} remaining) — resets at midnight UTC")
+
+
+# ══════════════════════════════════════════════════════════════════════════════
 # ORCHESTRATOR
 # ══════════════════════════════════════════════════════════════════════════════
 
 def run_pipeline(resume_text: str, resume_data: Dict, jd_text: str) -> Dict:
+    usage_gate()   # ← enforce daily limit before any API call
     r={}
     with st.status("🔍 JD Intelligence...",expanded=False):
         r["jd_data"]=jd_intelligence_agent(jd_text)
@@ -2205,11 +2248,95 @@ def display_memory_tab():
 # ══════════════════════════════════════════════════════════════════════════════
 
 def main():
-    st.set_page_config(page_title="AI Talent Acquisition System",page_icon="🤖",layout="wide")
+    st.set_page_config(
+        page_title="AI Talent Acquisition System v15",
+        page_icon="🤖",
+        layout="wide",
+        menu_items={
+            "Get Help":         "https://github.com/YOUR_USERNAME/ats-v15",
+            "Report a bug":     "https://github.com/YOUR_USERNAME/ats-v15/issues",
+            "About":            "AI Talent Acquisition System v15 — built with LangChain, OpenAI & Streamlit.",
+        }
+    )
+
+    # ── Sidebar ──────────────────────────────────────────────────────────────
+    with st.sidebar:
+        st.markdown("## 🤖 ATS v15")
+        st.markdown(
+            "An AI hiring system that thinks like a **staff-level recruiter**, "
+            "not a keyword matcher."
+        )
+        st.divider()
+        st.markdown("### ✨ What's new in v15")
+        st.markdown(
+            "- 🔧 **Platform learnability** — Power Platform / Copilot Studio "
+            "down-weighted if you have cloud + LLM foundation\n"
+            "- 🤖 **Agentic AI ≡ AI Agents** — direct alias match\n"
+            "- 🚀 **FDE archetype detection** — stakeholder + deployment signals\n"
+            "- 📊 **Smart overqualification** — role appeal scoring\n"
+            "- 💡 **7-tier skill matching** — Exact → Implicit inference"
+        )
+        st.divider()
+        st.markdown("### 🔗 Links")
+        st.markdown(
+            "[![GitHub](https://img.shields.io/badge/GitHub-Source_Code-black?logo=github)]"
+            "(https://github.com/YOUR_USERNAME/ats-v15)\n\n"
+            "[![LinkedIn](https://img.shields.io/badge/LinkedIn-Post-blue?logo=linkedin)]"
+            "(https://linkedin.com/in/YOUR_PROFILE)"
+        )
+        st.divider()
+        st.markdown("### ⚙️ Run locally")
+        st.code(
+            "git clone https://github.com/YOUR_USERNAME/ats-v15\n"
+            "pip install -r requirements.txt\n"
+            "# Add OPENAI_API_KEY to .env\n"
+            "streamlit run ats_v15.py",
+            language="bash"
+        )
+        st.divider()
+        st.caption(
+            "Built with ❤️ using LangChain · OpenAI · Streamlit · Pydantic\n\n"
+            "⚠️ This is a public demo — do not upload confidential resumes.\n"
+            "No data is stored beyond your session."
+        )
+
+    # ── Main header ──────────────────────────────────────────────────────────
     st.title("🤖 AI Talent Acquisition System")
-    st.caption("v15 · Platform Tool Learnability · Smart Overqualification · "
-               "FDE Archetype Detection · Agentic AI ≈ AI Agents Alias · "
-               "Expanded Role Clustering · Role Appeal Scoring")
+    st.caption(
+        "v15 · Platform Tool Learnability · Smart Overqualification · "
+        "FDE Archetype Detection · Agentic AI ≈ AI Agents · Role Appeal Scoring"
+    )
+
+    # ── Hero banner for new visitors ─────────────────────────────────────────
+    if not st.session_state.get("resume_data"):
+        with st.expander("👋 What does this do? (click to expand)", expanded=True):
+            c1, c2, c3 = st.columns(3)
+            with c1:
+                st.markdown("#### 📄 Step 1 — Upload Resume")
+                st.markdown(
+                    "Upload any PDF resume. The system parses it, "
+                    "infers implicit skills from context, and detects "
+                    "leadership, stakeholder experience, and production signals."
+                )
+            with c2:
+                st.markdown("#### 📋 Step 2 — Paste JD")
+                st.markdown(
+                    "Paste any job description. The system detects intent "
+                    "(GenAI / FDE / Engineering / Platform), adapts scoring "
+                    "weights, and matches skills across 7 tiers."
+                )
+            with c3:
+                st.markdown("#### 🎯 Step 3 — Get Decision")
+                st.markdown(
+                    "Get a final score, skill gap analysis, overqualification "
+                    "assessment with role appeal, interview questions, and "
+                    "a hiring decision with confidence level."
+                )
+            st.info(
+                "🔒 **Privacy:** Your resume is processed in-memory only. "
+                "Nothing is saved to disk or shared. "
+                "Do not upload confidential documents."
+            )
 
     for k in ['resume_data','resume_text','file_processed','pipeline_results','last_override']:
         if k not in st.session_state: st.session_state[k]=None

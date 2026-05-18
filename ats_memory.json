@@ -310,6 +310,136 @@
         "formula": "(40% \u00d7 66.3) + (25% \u00d7 100.0) + (25% \u00d7 77.6) + (10% \u00d7 80.0) = 78.9% \u2192 align\u00d70.94 + impact+3.0 = 77.5% | Platform tools down-weighted (learnable gap)"
       },
       "impact_score": 9
+    },
+    {
+      "id": "Jayachandran Swarnamoorthy_1779091309",
+      "timestamp": "2026-05-18T13:31:49.407825",
+      "name": "Jayachandran Swarnamoorthy",
+      "role": "AI Engineer",
+      "jd_id": "ai_engineer",
+      "final_score": 91.1,
+      "ai_decision": "Strong Hire",
+      "final_decision": "Strong Hire",
+      "override": true,
+      "override_note": "",
+      "exp_flag": "Good Fit",
+      "jd_quality": "High",
+      "experience_years": 14,
+      "matched_skills": [
+        "Python",
+        "Generative AI",
+        "Large Language Models",
+        "Docker",
+        "Git",
+        "CI/CD Pipelines",
+        "Prompt Engineering"
+      ],
+      "missing_skills": [
+        "Node.js",
+        "RAG architecture",
+        "Kubernetes",
+        "orchestration tools",
+        "full-stack application development"
+      ],
+      "confidence": 90,
+      "score_audit": {
+        "skill_score": 93.6,
+        "skill_weight": 35.0,
+        "exp_score": 100.0,
+        "exp_weight": 20.0,
+        "role_score": 86.5,
+        "role_weight": 30.0,
+        "ai_score": 85.0,
+        "ai_weight": 15.0,
+        "final_score": 91.1,
+        "raw_final": 91.5,
+        "impact_boost": 3.0,
+        "coverage_alignment_applied": true,
+        "depth_multiplier": 1.5,
+        "raw_skill_score": 62.4,
+        "ai_key_strengths": [
+          "Strong experience in Generative AI and Large Language Models",
+          "Proven ability to design and deploy production-grade decision systems"
+        ],
+        "ai_key_risks": [
+          "Missing Node.js, RAG architecture, and Kubernetes experience"
+        ],
+        "ai_verdict_reason": "Because the candidate has strong domain expertise and most critical skills covered, with only minor gaps in optional skills, which are learnable.",
+        "skill_breakdown": {
+          "Python": {
+            "weight": 1.0,
+            "credit": 1.0,
+            "confidence": 1.0,
+            "effective": 1.0,
+            "matched_by": "Python",
+            "reason": "exact"
+          },
+          "Generative AI": {
+            "weight": 1.0,
+            "credit": 1.0,
+            "confidence": 1.0,
+            "effective": 1.0,
+            "matched_by": "Generative AI",
+            "reason": "exact"
+          },
+          "Large Language Models": {
+            "weight": 1.0,
+            "credit": 1.0,
+            "confidence": 1.0,
+            "effective": 1.0,
+            "matched_by": "Large Language Models",
+            "reason": "exact"
+          },
+          "Docker": {
+            "weight": 0.6,
+            "credit": 1.0,
+            "confidence": 1.0,
+            "effective": 0.6,
+            "matched_by": "Docker",
+            "reason": "exact"
+          },
+          "Git": {
+            "weight": 0.25,
+            "credit": 1.0,
+            "confidence": 0.9,
+            "effective": 0.225,
+            "matched_by": "Git",
+            "reason": "exact"
+          },
+          "CI/CD Pipelines": {
+            "weight": 0.6,
+            "credit": 1.0,
+            "confidence": 1.0,
+            "effective": 0.6,
+            "matched_by": "CI/CD Pipelines",
+            "reason": "exact"
+          },
+          "Prompt Engineering": {
+            "weight": 0.6,
+            "credit": 1.0,
+            "confidence": 1.0,
+            "effective": 0.6,
+            "matched_by": "Prompt Engineering",
+            "reason": "exact"
+          }
+        },
+        "jd_intent": "genai",
+        "adaptive_weights_label": "GenAI Role \u2014 AI judgment weighted higher",
+        "title_boost": 11.0,
+        "implicit_skills_used": [
+          "Software Engineering",
+          "Backend Systems",
+          "Deployment",
+          "Microservices",
+          "Cloud Architecture",
+          "REST APIs",
+          "Flask",
+          "Django"
+        ],
+        "platform_learnability": true,
+        "formula": "(35% \u00d7 93.6) + (20% \u00d7 100.0) + (30% \u00d7 86.5) + (15% \u00d7 85.0) = 91.5% \u2192 align\u00d70.96 + impact+3.0 = 91.1% | Platform tools down-weighted (learnable gap)"
+      },
+      "impact_score": 9
     }
   ],
   "patterns": {
@@ -341,19 +471,30 @@
       "Managerial Experience": 1,
       "AI/ML Ethics": 1,
       "Modern Data Stack": 1,
-      "Jira": 1
+      "Jira": 1,
+      "Node.js": 1,
+      "RAG architecture": 1,
+      "Kubernetes": 1,
+      "orchestration tools": 1,
+      "full-stack application development": 1
     },
     "matched": {
       "prompt engineering": 1,
       "JavaScript": 2,
-      "Python": 2,
+      "Python": 3,
       "communication": 1,
       "Azure": 1,
       "APIs": 1,
       "Azure certifications": 1,
       "Agentic AI": 1,
       "MLOps": 1,
-      "Azure DevOps": 1
+      "Azure DevOps": 1,
+      "Generative AI": 1,
+      "Large Language Models": 1,
+      "Docker": 1,
+      "Git": 1,
+      "CI/CD Pipelines": 1,
+      "Prompt Engineering": 1
     }
   }
 }
